@@ -1,8 +1,9 @@
 #!/usr/bin/bash
 
+TERMUX_VERSION="0.118.0"
 apt install inetutils-ping 
 
-servers=("http://google.com" "raw.githubusercontent.com")
+servers=("google.com" "raw.githubusercontent.com")
 
 for server in "${servers[@]}"; do
     if ! ping -c 1 -W 3 "$server"&> /dev/null; then
