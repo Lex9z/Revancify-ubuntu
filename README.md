@@ -1,6 +1,8 @@
 # Revancify Ubuntu Termux🛠️
 ### A TUI wrapper for Revanced CLI with amazing features.
 
+### Fork Revancify for Ubuntu in Termux
+
 [![TelegramChannel](https://img.shields.io/badge/Telegram_Support_Chat-2CA5E0?style=for-the-badge&logo=Telegram&logoColor=FFFFFF)](https://t.me/revancifychat)
 
 ## Termux
