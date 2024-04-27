@@ -26,7 +26,7 @@ initialize() {
     [ ! -d "$storagePath" ] && mkdir -p "$storagePath"
     [ ! -d apps ] && mkdir -p apps
     arch="arm64-v8a"
-    repoDir="$HOME/Revancify"
+    repoDir="$HOME/Revancify-ubuntu"
     header=(dialog --backtitle "Revancify | [Arch: $arch, Root: $root]" --no-shadow)
     envFile=config.cfg
     [ ! -f "apps/.appSize" ] && : > "apps/.appSize"
