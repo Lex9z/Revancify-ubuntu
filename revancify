@@ -72,7 +72,7 @@ do
     shift
 done
 
-if [ "$(getprop ro.product.cpu.abi)" = "armeabi-v7a" ]; then
+if [ "arm64-v8a" = "armeabi-v7a" ]; then
     echo "CPU architecture \"armeabi-v7a\" of your device is not supported for patching."
     echo "You may get build errors."
     read -N 1 -s -r -p $'Press ENTER to CONTINUE or SPACE to EXIT...\n' key
@@ -133,7 +133,7 @@ checkrevancify() {
         case "$choice" in
         y | Y)
             rm -rf "$repo"
-            git clone --depth=1 https://github.com/decipher3114/Revancify.git && $repo/revancify && exit
+            git clone --depth=1 https://github.com/Lex9z/Revancify-ubuntu.git && $repo/revancify && exit
             ;;
         n | N)
             echo "Removing revancify completely !!"
