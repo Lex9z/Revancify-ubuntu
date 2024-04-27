@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+apt install inetutils-ping 
+
 servers=("http://google.com" "raw.githubusercontent.com")
 
 for server in "${servers[@]}"; do
