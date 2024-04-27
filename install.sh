@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-servers=("google.com" "raw.githubusercontent.com")
+servers=("http://google.com" "raw.githubusercontent.com")
 
 for server in "${servers[@]}"; do
     if ! ping -c 1 -W 3 "$server"&> /dev/null; then
