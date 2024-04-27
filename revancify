@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-HOME=/data/data/com.termux/files/home
-BIN=/data/data/com.termux/files/usr/bin
+HOME=/root
+BIN=/usr/bin
 
 repo="$HOME/Revancify"
 cp "$repo/revancify" "$BIN/revancify" >/dev/null 2>&1
@@ -107,12 +107,13 @@ checkdependencies() {
 installdependencies() {
     clear
     echo "Installing dependencies..."
-    arch=$(getprop ro.product.cpu.abi)
+    arch="arm64-v8a"
     cp "$repo/revancify" "$BIN/revancify"
     sleep 1
-    [ ! -d "$HOME/storage" ] && termux-setup-storage
-    pkg update -y -o Dpkg::Options::="--force-confnew" || return 1
-    pkg install openjdk-17 wget ncurses-utils dialog pup jq -y -o Dpkg::Options::="--force-confnew" || return 1
+    [ ! -d "/sdcard" ] && termux-setup-storage
+    apt update -y -o Dpkg::Options::="--force-confnew" || return 1
+    #pkg install openjdk-17 wget ncurses-utils dialog pup jq -y -o Dpkg::Options::="--force-confnew" || return 1
+    pkg install wget ncurses-utils dialog pup jq -y -o Dpkg::Options::="--force-confnew" || return 1
     git config --global pull.rebase true
     sed -i '/allow-external-apps/s/# //' "$HOME/.termux/termux.properties"
     [ ! -f "$DATA/aapt2" ] && wget "https://github.com/decipher3114/binaries/releases/download/v0.1/aapt2_$arch" -O "$DATA/aapt2" && chmod +x "$DATA/aapt2"
