@@ -2,7 +2,7 @@
 
 UserAgent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
 
-arch=$(getprop ro.product.cpu.abi)
+arch="arm64-v8a"
 developer="$1"
 appName="$2"
 appVer="$3"
