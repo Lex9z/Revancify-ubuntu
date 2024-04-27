@@ -3,7 +3,7 @@
 HOME=/root
 BIN=/usr/bin
 
-repo="$HOME/Revancify"
+repo="$HOME/Revancify-ubuntu"
 cp "$repo/revancify" "$BIN/revancify" >/dev/null 2>&1
 root=default
 online="Checking..."
