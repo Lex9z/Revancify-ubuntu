@@ -90,7 +90,8 @@ fetchToolsAPI() {
         i=$(("$i" + 1))
     done
 
-    if [ "$(wc -l <".${source}-data")" -lt "11" ]; then
+    #if [ "$(wc -l <".${source}-data")" -lt "11" ]; then
+    if ! ping -c 1 -W 3 google.com &> /dev/null; then
         "${header[@]}" --msgbox "Oops! Unable to connect to Github.\n\nRetry or change your Network." 12 45
         return 1
     fi
