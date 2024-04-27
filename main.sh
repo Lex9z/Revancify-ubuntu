@@ -21,11 +21,11 @@ setEnv() {
 }
 
 initialize() {
-    internalStorage="/storage/emulated/0"
+    internalStorage="/sdcard"
     storagePath="$internalStorage/Revancify"
     [ ! -d "$storagePath" ] && mkdir -p "$storagePath"
     [ ! -d apps ] && mkdir -p apps
-    arch=$(getprop ro.product.cpu.abi)
+    arch="arm64-v8a"
     repoDir="$HOME/Revancify"
     header=(dialog --backtitle "Revancify | [Arch: $arch, Root: $root]" --no-shadow)
     envFile=config.cfg
